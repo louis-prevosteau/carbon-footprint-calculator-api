@@ -1,8 +1,10 @@
 import { ObjectType, Field, ID } from '@nestjs/graphql';
+import { Footprint } from 'src/footprints/entities/footprint.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -25,6 +27,10 @@ export class User {
   @Column()
   @Field()
   password: string;
+
+  @Field((type) => [Footprint])
+  @OneToMany((type) => Footprint, (footprint) => footprint.user)
+  footprints: Footprint[];
 
   @CreateDateColumn()
   @Field()
