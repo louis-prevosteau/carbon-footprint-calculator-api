@@ -9,6 +9,7 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { ConfigModule, ConfigService } from '@nestjs/config';
 import { DataSource } from 'typeorm';
 import { FootprintsModule } from './footprints/footprints.module';
+import { AuthModule } from './auth/auth.module';
 
 @Module({
   imports: [
@@ -31,6 +32,7 @@ import { FootprintsModule } from './footprints/footprints.module';
       synchronize: true,
     }),
     FootprintsModule,
+    AuthModule,
   ],
   controllers: [AppController],
   providers: [AppService],

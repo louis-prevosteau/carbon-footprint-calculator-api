@@ -41,7 +41,6 @@ type Mutation {
   updateUser(id: ID!, updateUserInput: updateUser!): User!
   removeUser(id: Int!): User!
   createFootprint(createFootprintInput: CreateFootprintInput!): Footprint!
-  updateFootprint(updateFootprintInput: UpdateFootprintInput!): Footprint!
   removeFootprint(id: Int!): Footprint!
 }
 
@@ -60,10 +59,4 @@ input updateUser {
 input CreateFootprintInput {
   """Example field (placeholder)"""
   exampleField: Int!
-}
-
-input UpdateFootprintInput {
-  """Example field (placeholder)"""
-  exampleField: Int
-  id: Int!
 }
